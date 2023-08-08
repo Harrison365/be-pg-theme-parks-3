@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
+    "test-app": "PGDATABASE=theme_parks jest app.test.js",
     "test-seed": "PGDATABASE=theme_parks jest seed.test.js",
     "test-utils": "jest utils",
     "setup-db": "psql -f ./db/theme-parks.sql",
