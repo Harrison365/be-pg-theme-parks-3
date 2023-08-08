@@ -36,12 +36,10 @@ describe("GET /api/parks", () => {
           year_opened: 1979,
         });
         response.body.parks.forEach((park) => {
-          expect(Object.keys(park)).toEqual([
-            "park_id",
-            "park_name",
-            "year_opened",
-            "annual_attendance",
-          ]);
+          expect(park).toHaveProperty("park_id", expect.any(Number));
+          expect(park).toHaveProperty("park_name", expect.any(String));
+          expect(park).toHaveProperty("year_opened", expect.any(Number));
+          expect(park).toHaveProperty("annual_attendance", expect.any(Number));
         });
       });
   });
